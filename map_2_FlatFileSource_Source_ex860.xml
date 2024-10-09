@@ -1,0 +1,703 @@
+<xmap>
+<doc type="ffsrc" name="Source_ex860">
+<message>source ff nestle860</message>
+<exd>../jobs/SARTORI_860_FF_ANY/exd_Exchange_860.xml#Exchange_860</exd>
+<Category>ANY</Category>
+<RightTrim>true</RightTrim>
+<SkipUnknownIdentifier>False</SkipUnknownIdentifier>
+<UnknownIdentifierLogLevel>INFO</UnknownIdentifierLogLevel>
+<node type="function" name="PreProcessing">
+<functions FunctionCount="6">
+<function type="Setvariable" name="count" value="0" datatype="Integer" />
+<function type="Setvariable" name="vConfig_FileName" value="C:\DiCentral\DiUnite\jobs\MAP_CONFIGURATIONS\config.txt" />
+<function type="Lookup" filename="@vConfig_FileName" section="config" casesensitive="False" load="False" key="ConnectionStringMain" />
+<function type="Setvariable" name="vConnString" value="@currentvalue" />
+<function type="SQLConnect" connectionname="dbMain" connectionstring="@vConnString" userid="" password="" autocommit="True" />
+<function type="Setvariable" name="countline" value="0" datatype="Integer" />
+</functions>
+</node>
+
+<recordend>NEWLINE</recordend>
+<offsetbegin>0</offsetbegin>
+<node type="record" name="ff" level="1">
+<node type="field" order="1" name="Sender_Id">
+<separator>TAB</separator>
+<functions FunctionCount="48">
+<function type="Setvariable" name="receiver_id"/>
+<function type="If" lvalue="@count" rvalue="0" operator="=" datatype="integer"/>
+<function type="Newrow" exd="Exchange_860" table="Header"/>
+<function type="Operatevariable" name="count" value="1" datatype="Integer"/>
+<function type="EndIf" />
+<function type="Setvalue" exd="Exchange_860" table="Header" field="EDTY" value="1"/>
+<function type="Setvalue" exd="Exchange_860" table="Header" field="EKCO" value="00001"/>
+<function type="Newrow" exd="Exchange_860" table="Detail"/>
+<function type="Operatevariable" name="countline" value="+1" datatype="Integer"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="EDLN" value="@countline"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="EDTY" value="2"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="EKCO" value="00001"/>
+<function type="Setvalue" exd="Exchange_860" table="Header" field="PNID" value="3250"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="PNID" value="3250"/>
+<function type="Setvariable" name="COMMENT" value="--------------------------------PNID FOR MC LANE FOODSERVICE---------------------------------------------"/>
+<function type="If" lvalue="@receiver_id" rvalue="7075" operator="="/>
+<function type="Setvalue" exd="Exchange_860" table="Header" field="PNID" value="3227"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="PNID" value="3227"/>
+<function type="EndIf" />
+<function type="Setvariable" name="COMMENT" value="--------------------------------PNID FOR Shamrock Food---------------------------------------------"/>
+<function type="If" lvalue="@receiver_id" rvalue="29484" operator="="/>
+<function type="Setvalue" exd="Exchange_860" table="Header" field="PNID" value="5416"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="PNID" value="5416"/>
+<function type="EndIf" />
+<function type="Setvariable" name="COMMENT" value="--------------------------------PNID FOR DPI Specialty Food--------------------------------------------"/>
+<function type="If" lvalue="@receiver_id" rvalue="36307" operator="="/>
+<function type="Setvalue" exd="Exchange_860" table="Header" field="PNID" value="7826"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="PNID" value="7826"/>
+<function type="EndIf" />
+<function type="Setvariable" name="COMMENT" value="--------------------------------US Foodservice Inc (ASYS--------------------------------------------"/>
+<function type="If" lvalue="@receiver_id" rvalue="6116" operator="="/>
+<function type="Setvalue" exd="Exchange_860" table="Header" field="PNID" value="3134"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="PNID" value="3134"/>
+<function type="EndIf" />
+<function type="Setvariable" name="COMMENT" value="------------------------------code for PNID for all TP by hardcode on config------------------------------------------"/>
+<function type="If" lvalue="@receiver_id" rvalue="6116" operator="!="/>
+<function type="AndIf" lvalue="@receiver_id" rvalue="36307" operator="!="/>
+<function type="AndIf" lvalue="@receiver_id" rvalue="29484" operator="!="/>
+<function type="AndIf" lvalue="@receiver_id" rvalue="7075" operator="!="/>
+<function type="AndIf" lvalue="@receiver_id" rvalue="21197" operator="!="/>
+<function type="AndIf" lvalue="@receiver_id" rvalue="17332" operator="!="/>
+<function type="AndIf" lvalue="@receiver_id" rvalue="25214" operator="!="/>
+<function type="Setvalue" exd="Exchange_860" table="Header" field="PNID" value="@receiver_id"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="PNID" value="@receiver_id"/>
+<function type="EndIf" />
+<function type="Setvariable" name="COMMENT" value="--------------------------code for CHGC detail---------------------------"/>
+<function type="Lookup" filename="C:\DiCentral\DiUnite\jobs\SARTORI_860_FF_ANY\Lookup.txt" section="CHGC" casesensitive="True" load="False" key="@receiver_id" default="NULL"/>
+<function type="Setvariable" name="vCHGC"/>
+</functions>
+</node>
+<node type="field" order="2" name="Transaction_Control_No">
+<separator>TAB</separator>
+<functions FunctionCount="20">
+<function type="Setvariable" name="ST02full"/>
+<function type="Setvariable" name="gr_cntl_no" datatype="Integer"/>
+<function type="Right" length="4" value="@currentvalue"/>
+<function type="Setvariable" name="ST02" value="@currentvalue"/>
+<function type="DelimitedMid" value="@Input" fieldseparator="_" fieldno="5"/>
+<function type="Setvariable" name="custid"/>
+<function type="Setvalue" exd="Exchange_860" table="Header" field="ADLJ" value="@custid"/>
+<function type="DelimitedMid" value="@Input" fieldseparator="_" fieldno="4"/>
+<function type="Setvariable" name="to_custid"/>
+<function type="Setvalue" exd="Exchange_860" table="Header" field="AFT" value="@to_custid"/>
+<function type="DelimitedMid" value="@Input" fieldseparator="_" fieldno="3"/>
+<function type="Setvariable" name="YearQuarter" datatype="Text"/>
+<function type="Left" length="4" value="@YearQuarter"/>
+<function type="Setvariable" name="Year" datatype="Integer"/>
+<function type="Right" length="2" value="@YearQuarter"/>
+<function type="Setvariable" name="Quarter" datatype="Integer"/>
+<function type="DelimitedMid" value="@Input" fieldseparator="_" fieldno="2"/>
+<function type="Setvariable" name="Inboxid"/>
+<function type="Length" value="@ST02full"/>
+<function type="Padding" length="10" side="Left" symbol="0" variable="@ST02full"/>
+</functions>
+</node>
+<node type="field" order="3" name="Trans_Type">
+<separator>TAB</separator>
+<functions FunctionCount="2">
+<function type="SetValue" exd="Exchange_860" table="Header" field="TPUR" value="04"/>
+<function type="Setvalue" exd="Exchange_860" table="Header" field="MCU" value="         103"/>
+</functions>
+</node>
+<node type="field" order="4" name="PO_Change_Type">
+<separator>TAB</separator>
+<functions FunctionCount="17">
+<function type="If" lvalue="@currentvalue" rvalue="SA" operator="="/>
+<function type="Setvalue" exd="Exchange_860" table="Header" field="EDCT" value="SZ"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="EDCT" value="SZ"/>
+<function type="Else" />
+<function type="Setvalue" exd="Exchange_860" table="Header" field="EDCT"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="EDCT"/>
+<function type="EndIf" />
+<function type="Setvalue" exd="Exchange_860" table="Header" field="EDLN" value="00"/>
+<function type="Setvalue" exd="Exchange_860" table="Header" field="EDST" value="860"/>
+<function type="Setvalue" exd="Exchange_860" table="Header" field="EDER" value="R"/>
+<function type="Setvalue" exd="Exchange_860" table="Header" field="EDSP" value="0"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="EDST" value="860"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="EDER" value="R"/>
+<function type="If" lvalue="@receiver_id" rvalue="21197" operator="="/>
+<function type="Setvalue" exd="Exchange_860" table="Header" field="EDCT" value="SZ"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="EDCT" value="SZ"/>
+<function type="EndIf" />
+</functions>
+</node>
+<node type="field" order="5" name="PO_Number">
+<separator>TAB</separator>
+<functions FunctionCount="2">
+<function type="Setvalue" exd="Exchange_860" table="Header" field="VR01"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="VR01"/>
+</functions>
+</node>
+<node type="field" order="6" name="PO_Date">
+<separator>TAB</separator>
+</node>
+<node type="field" order="7" name="Vendor_Name">
+<separator>TAB</separator>
+</node>
+<node type="field" order="8" name="Vendor_Code">
+<separator>TAB</separator>
+<functions FunctionCount="70">
+<function type="Setvariable" name="vField_7"/>
+<function type="Setvariable" name="GSST" value="@vField_7"/>
+<function type="Setvariable" name="GS" value="@vField_7"/>
+<function type="If" lvalue="@receiver_id" rvalue="25214" operator="="/>
+<function type="Setvariable" name="GS" value="17"/>
+<function type="Setvariable" name="GSST" value="17"/>
+<function type="Elseif" lvalue="@receiver_id" rvalue="17332" operator="="/>
+<function type="Setvariable" name="GS" value="15"/>
+<function type="Setvariable" name="GSST" value="15"/>
+<function type="Elseif" lvalue="@receiver_id" rvalue="21197" operator="="/>
+<function type="Setvariable" name="GS" value="18"/>
+<function type="Setvariable" name="GSST" value="18"/>
+<function type="Elseif" lvalue="@receiver_id" rvalue="7075" operator="="/>
+<function type="Setvariable" name="GS" value="23"/>
+<function type="Setvariable" name="GSST" value="23"/>
+<function type="Elseif" lvalue="@receiver_id" rvalue="29484" operator="="/>
+<function type="Setvariable" name="GS" value="21"/>
+<function type="Setvariable" name="GSST" value="21"/>
+<function type="Elseif" lvalue="@receiver_id" rvalue="36307" operator="="/>
+<function type="Setvariable" name="GS" value="30"/>
+<function type="Setvariable" name="GSST" value="30"/>
+<function type="Elseif" lvalue="@receiver_id" rvalue="6116" operator="="/>
+<function type="Setvariable" name="GS" value="29"/>
+<function type="Setvariable" name="GSST" value="29"/>
+<function type="Elseif" lvalue="@receiver_id" rvalue="16688" operator="="/>
+<function type="Setvariable" name="GS" value="42"/>
+<function type="Setvariable" name="GSST" value="42"/>
+<function type="Elseif" lvalue="@receiver_id" rvalue="51990" operator="="/>
+<function type="Setvariable" name="GS" value="43"/>
+<function type="Setvariable" name="GSST" value="43"/>
+<function type="EndIf" />
+<function type="Setvariable" name="sql" value="select top(1) gr_cntl_no from [dbo].[inbox_Qr"/>
+<function type="Operatevariable" name="@sql" value="+@Quarter"/>
+<function type="Operatevariable" name="@sql" value="+_"/>
+<function type="Operatevariable" name="@sql" value="+@Year"/>
+<function type="Operatevariable" name="@sql" value="+] where inboxid= &apos;"/>
+<function type="Operatevariable" name="@sql" value="+@Inboxid"/>
+<function type="Operatevariable" name="@sql" value="+&apos;"/>
+<function type="SQLExec" connectionname="dbMain" sql="@sql" command=""/>
+<function type="Trim" side="Both"/>
+<function type="Setvariable" name="GScontrol"/>
+<function type="If" lvalue="@GScontrol" rvalue="" operator="="/>
+<function type="If" lvalue="@Quarter" rvalue="1" operator="="/>
+<function type="Operatevariable" name="Quarter" value="+3"/>
+<function type="Operatevariable" name="Year" value="-1"/>
+<function type="Else" />
+<function type="Operatevariable" name="Quarter" value="-1"/>
+<function type="EndIf" />
+<function type="Else" />
+<function type="If" lvalue="@GScontrol" rvalue="" operator="!="/>
+<function type="Length" value="@GScontrol"/>
+<function type="If" lvalue="@currentvalue" rvalue="3" operator="&gt;" datatype="integer"/>
+<function type="Right" length="3" value="@GScontrol"/>
+<function type="Setvariable" name="GS_3d" value="@currentvalue"/>
+<function type="Operatevariable" name="GS" value="+@GS_3d"/>
+<function type="Operatevariable" name="GSST" value="+@GS_3d"/>
+<function type="Else" />
+<function type="Operatevariable" name="GS" value="+@GScontrol"/>
+<function type="Operatevariable" name="GSST" value="+@GScontrol"/>
+<function type="EndIf" />
+<function type="EndIf" />
+<function type="EndIf" />
+<function type="Operatevariable" name="GS" value="+@ST02"/>
+<function type="Setvalue" exd="Exchange_860" table="Header" field="EDSQ" value="@GS"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="EDSQ" value="@GS"/>
+<function type="Setvalue" exd="Exchange_860" table="Header" field="EDOC" value="@GS"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="EDOC" value="@GS"/>
+<function type="Operatevariable" name="GSST" value="+@ST02full"/>
+<function type="Setvalue" exd="Exchange_860" table="Header" field="EDBT" value="@GSST"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="EDBT" value="@GSST"/>
+</functions>
+</node>
+<node type="field" order="9" name="Internal_Vendor_No">
+<separator>TAB</separator>
+</node>
+<node type="field" order="10" name="Department_No">
+<separator>TAB</separator>
+</node>
+<node type="field" order="11" name="Department_Description">
+<separator>TAB</separator>
+</node>
+<node type="field" order="12" name="Promotion_Code">
+<separator>TAB</separator>
+</node>
+<node type="field" order="13" name="Contract_No">
+<separator>TAB</separator>
+</node>
+<node type="field" order="14" name="PO_Release_Number">
+<separator>TAB</separator>
+</node>
+<node type="field" order="15" name="FOB_Payment_Code">
+<separator>TAB</separator>
+</node>
+<node type="field" order="16" name="FOB_Point">
+<separator>TAB</separator>
+</node>
+<node type="field" order="17" name="FOB_Description">
+<separator>TAB</separator>
+</node>
+<node type="field" order="18" name="Sale_Requirement_Type">
+<separator>TAB</separator>
+</node>
+<node type="field" order="19" name="Notes">
+<separator>TAB</separator>
+</node>
+<node type="field" order="20" name="Message">
+<separator>TAB</separator>
+</node>
+<node type="field" order="21" name="Currency_code">
+<separator>TAB</separator>
+</node>
+<node type="field" order="22" name="Special_Order_Type">
+<separator>TAB</separator>
+</node>
+<node type="field" order="23" name="Terms_Type_Code">
+<separator>TAB</separator>
+</node>
+<node type="field" order="24" name="Terms_Basis_DateType">
+<separator>TAB</separator>
+</node>
+<node type="field" order="25" name="Terms_Disc_Percent">
+<separator>TAB</separator>
+</node>
+<node type="field" order="26" name="Term_Discount_Amount">
+<separator>TAB</separator>
+</node>
+<node type="field" order="27" name="Terms_Disc_Days_Due">
+<separator>TAB</separator>
+</node>
+<node type="field" order="28" name="Terms_Net_Days">
+<separator>TAB</separator>
+</node>
+<node type="field" order="29" name="Terms_Net_Due_date">
+<separator>TAB</separator>
+</node>
+<node type="field" order="30" name="Terms_Discount_Due_Date">
+<separator>TAB</separator>
+</node>
+<node type="field" order="31" name="Terms_Day_of_Month">
+<separator>TAB</separator>
+</node>
+<node type="field" order="32" name="Terms_Description">
+<separator>TAB</separator>
+</node>
+<node type="field" order="33" name="Ship_Deliver_Not_Before">
+<separator>TAB</separator>
+</node>
+<node type="field" order="34" name="Ship_Deliver_Not_After">
+<separator>TAB</separator>
+</node>
+<node type="field" order="35" name="Requested_Ship_Date">
+<separator>TAB</separator>
+</node>
+<node type="field" order="36" name="Requested_Delivery_Date">
+<separator>TAB</separator>
+<functions FunctionCount="1">
+<function type="Setvariable" name="DTM067"/>
+</functions>
+</node>
+<node type="field" order="37" name="Cancel_Date">
+<separator>TAB</separator>
+</node>
+<node type="field" order="38" name="add._Date1">
+<separator>TAB</separator>
+</node>
+<node type="field" order="39" name="add._Date2">
+<separator>TAB</separator>
+</node>
+<node type="field" order="40" name="Routing_Sequence_Code">
+<separator>TAB</separator>
+</node>
+<node type="field" order="41" name="SCAC_Code">
+<separator>TAB</separator>
+</node>
+<node type="field" order="42" name="Carrier_Name">
+<separator>TAB</separator>
+</node>
+<node type="field" order="43" name="Transport_Type">
+<separator>TAB</separator>
+</node>
+<node type="field" order="44" name="Service_Level_Code">
+<separator>TAB</separator>
+</node>
+<node type="field" order="45" name="Ship_to_Name">
+<separator>TAB</separator>
+</node>
+<node type="field" order="46" name="Ship_to_Code_Qualifier">
+<separator>TAB</separator>
+</node>
+<node type="field" order="47" name="Ship_to_Code">
+<separator>TAB</separator>
+<functions FunctionCount="8">
+<function type="Trim" side="Both"/>
+<function type="Setvariable" name="vAsc_46"/>
+<function type="If" lvalue="@receiver_id" rvalue="25214" operator="="/>
+<function type="Lookup" filename="C:\DiCentral\DiUnite\jobs\SARTORI_860_FF_ANY\Lookup_N1ST.txt" section="N104ST" casesensitive="False" load="False" key="@currentvalue"/>
+<function type="Setvalue" exd="Exchange_860" table="Header" field="PNID"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="PNID"/>
+<function type="EndIf" />
+<function type="Setvalue" exd="Exchange_860" table="Header" field="VR02" value="@vAsc_46"/>
+</functions>
+</node>
+<node type="field" order="48" name="Ship_to_Address1">
+<separator>TAB</separator>
+</node>
+<node type="field" order="49" name="Ship_to_Address2">
+<separator>TAB</separator>
+</node>
+<node type="field" order="50" name="Ship_to_City">
+<separator>TAB</separator>
+</node>
+<node type="field" order="51" name="Ship_to_state">
+<separator>TAB</separator>
+</node>
+<node type="field" order="52" name="Ship_to_Zipcode">
+<separator>TAB</separator>
+</node>
+<node type="field" order="53" name="Ship_to_Country_Code">
+<separator>TAB</separator>
+</node>
+<node type="field" order="54" name="Ship_to_Contact_Name">
+<separator>TAB</separator>
+</node>
+<node type="field" order="55" name="Ship_to_Contact_Tel">
+<separator>TAB</separator>
+</node>
+<node type="field" order="56" name="Ship_to_Contact_Fax">
+<separator>TAB</separator>
+</node>
+<node type="field" order="57" name="Ship_to_Contact_Email">
+<separator>TAB</separator>
+</node>
+<node type="field" order="58" name="Ship_From_Name">
+<separator>TAB</separator>
+</node>
+<node type="field" order="59" name="Ship_From_Code">
+<separator>TAB</separator>
+</node>
+<node type="field" order="60" name="Ship_From_address1">
+<separator>TAB</separator>
+</node>
+<node type="field" order="61" name="Ship_From_address2">
+<separator>TAB</separator>
+</node>
+<node type="field" order="62" name="Ship_from_City">
+<separator>TAB</separator>
+</node>
+<node type="field" order="63" name="Ship_From_State">
+<separator>TAB</separator>
+</node>
+<node type="field" order="64" name="Ship_From_Zipcode">
+<separator>TAB</separator>
+</node>
+<node type="field" order="65" name="Ship_From_Country_Code">
+<separator>TAB</separator>
+</node>
+<node type="field" order="66" name="Buyer/Mark_for_Store_Name">
+<separator>TAB</separator>
+</node>
+<node type="field" order="67" name="Buyer/Mark_For_Store_No">
+<separator>TAB</separator>
+<functions FunctionCount="6">
+<function type="Trim" side="Both"/>
+<function type="If" lvalue="@receiver_id" rvalue="21197" operator="="/>
+<function type="Lookup" filename="C:\DiCentral\DiUnite\jobs\SARTORI_860_FF_ANY\Lookup.txt" section="PartID" casesensitive="False" load="False" key="@currentvalue"/>
+<function type="Setvalue" exd="Exchange_860" table="Header" field="PNID"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="PNID"/>
+<function type="EndIf" />
+</functions>
+</node>
+<node type="field" order="68" name="Buyer/Mark_For_Address1">
+<separator>TAB</separator>
+</node>
+<node type="field" order="69" name="Buyer/Mark_For_Address2">
+<separator>TAB</separator>
+</node>
+<node type="field" order="70" name="Buyer/Mark_For_City">
+<separator>TAB</separator>
+</node>
+<node type="field" order="71" name="Buyer/Mark_For_State">
+<separator>TAB</separator>
+</node>
+<node type="field" order="72" name="Buyer/Mark_For_Zipcode">
+<separator>TAB</separator>
+</node>
+<node type="field" order="73" name="Buyer_Contact_Name">
+<separator>TAB</separator>
+</node>
+<node type="field" order="74" name="Buyer_Contact_Tel">
+<separator>TAB</separator>
+</node>
+<node type="field" order="75" name="Buyer_Contact_Fax">
+<separator>TAB</separator>
+</node>
+<node type="field" order="76" name="Buyer_Contact_Email">
+<separator>TAB</separator>
+</node>
+<node type="field" order="77" name="Bill_To_Name">
+<separator>TAB</separator>
+</node>
+<node type="field" order="78" name="Bill_to_Code_Qualifier">
+<separator>TAB</separator>
+</node>
+<node type="field" order="79" name="Bill_to_Code">
+<separator>TAB</separator>
+</node>
+<node type="field" order="80" name="Bill_to_Address_1">
+<separator>TAB</separator>
+</node>
+<node type="field" order="81" name="Bill_to_Address_2">
+<separator>TAB</separator>
+</node>
+<node type="field" order="82" name="Bill_to_City">
+<separator>TAB</separator>
+</node>
+<node type="field" order="83" name="Bill_to_State">
+<separator>TAB</separator>
+</node>
+<node type="field" order="84" name="Bill_to_Zipcode">
+<separator>TAB</separator>
+</node>
+<node type="field" order="85" name="Bill_To_Country_Code">
+<separator>TAB</separator>
+</node>
+<node type="field" order="86" name="Bill_to_Contact_Name">
+<separator>TAB</separator>
+</node>
+<node type="field" order="87" name="Bill_to_Contact_Tel">
+<separator>TAB</separator>
+</node>
+<node type="field" order="88" name="Bill_to_Contact_Fax">
+<separator>TAB</separator>
+</node>
+<node type="field" order="89" name="Bill_to_Contact_Email">
+<separator>TAB</separator>
+</node>
+<node type="field" order="90" name="Ln_No">
+<separator>TAB</separator>
+<functions FunctionCount="5">
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="MCU" value="         103"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="URRF"/>
+<function type="If" lvalue="@receiver_id" rvalue="7075" operator="="/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="URRF" value="@vNULL"/>
+<function type="EndIf" />
+</functions>
+</node>
+<node type="field" order="91" name="Qty_Ordered">
+<separator>TAB</separator>
+<functions FunctionCount="1">
+<function type="Setvariable" name="index90"/>
+</functions>
+</node>
+<node type="field" order="92" name="Unit_of_Measure">
+<separator>TAB</separator>
+<functions FunctionCount="1">
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="UOM"/>
+</functions>
+</node>
+<node type="field" order="93" name="Unit_Price">
+<separator>TAB</separator>
+</node>
+<node type="field" order="94" name="Basis_Unit_Price">
+<separator>TAB</separator>
+</node>
+<node type="field" order="95" name="UPC_Qualifier">
+<separator>TAB</separator>
+</node>
+<node type="field" order="96" name="UPC_Code">
+<separator>TAB</separator>
+</node>
+<node type="field" order="97" name="Buyer_Item_Qualifier">
+<separator>TAB</separator>
+</node>
+<node type="field" order="98" name="Buyer_Item_No">
+<separator>TAB</separator>
+<functions FunctionCount="2">
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="VR02"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="CITM"/>
+</functions>
+</node>
+<node type="field" order="99" name="Vendor_Item_Qualifier">
+<separator>TAB</separator>
+</node>
+<node type="field" order="100" name="Vendor_Item_No">
+<separator>TAB</separator>
+<functions FunctionCount="4">
+<function type="If" lvalue="@receiver_id" rvalue="25214" operator="="/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="VR02"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="CITM"/>
+<function type="EndIf" />
+</functions>
+</node>
+<node type="field" order="101" name="GTIN_Qualifier">
+<separator>TAB</separator>
+</node>
+<node type="field" order="102" name="GTIN_Code">
+<separator>TAB</separator>
+</node>
+<node type="field" order="103" name="Product_Code5_Qualifier">
+<separator>TAB</separator>
+</node>
+<node type="field" order="104" name="Product_Code5">
+<separator>TAB</separator>
+</node>
+<node type="field" order="105" name="Retail_Price">
+<separator>TAB</separator>
+</node>
+<node type="field" order="106" name="Product_Description">
+<separator>TAB</separator>
+</node>
+<node type="field" order="107" name="Color_Description">
+<separator>TAB</separator>
+</node>
+<node type="field" order="108" name="Size_Description">
+<separator>TAB</separator>
+</node>
+<node type="field" order="109" name="Pack">
+<separator>TAB</separator>
+</node>
+<node type="field" order="110" name="Inner_Pack">
+<separator>TAB</separator>
+</node>
+<node type="field" order="111" name="Pack_Size">
+<separator>TAB</separator>
+</node>
+<node type="field" order="112" name="Pack_UOM">
+<separator>TAB</separator>
+</node>
+<node type="field" order="113" name="Item_Requested_Ship_Date">
+<separator>TAB</separator>
+</node>
+<node type="field" order="114" name="Item_Requested_Delivery_Date">
+<separator>TAB</separator>
+</node>
+<node type="field" order="115" name="Item_Routing">
+<separator>TAB</separator>
+</node>
+<node type="field" order="116" name="Item_Message">
+<separator>TAB</separator>
+</node>
+<node type="field" order="117" name="Extended_Line_Amount">
+<separator>TAB</separator>
+</node>
+<node type="field" order="118" name="PO_Change_Code_(860)">
+<separator>TAB</separator>
+<functions FunctionCount="72">
+<function type="Setvariable" name="vField_117"/>
+<function type="If" lvalue="@currentvalue" rvalue="AI" operator="="/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="CHGC" value="AI"/>
+<function type="Elseif" lvalue="@currentvalue" rvalue="CA" operator="="/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="CHGC" value="CA"/>
+<function type="Elseif" lvalue="@currentvalue" rvalue="DI" operator="="/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="CHGC" value="D"/>
+<function type="EndIf" />
+<function type="If" lvalue="@receiver_id" rvalue="25214" operator="="/>
+<function type="If" lvalue="@currentvalue" rvalue="RZ" operator="="/>
+<function type="OrIf" lvalue="@currentvalue" rvalue="CA" operator="="/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="CHGC" value="CA"/>
+<function type="EndIf" />
+<function type="EndIf" />
+<function type="If" lvalue="@receiver_id" rvalue="21197" operator="="/>
+<function type="If" lvalue="@currentvalue" rvalue="RZ" operator="="/>
+<function type="OrIf" lvalue="@currentvalue" rvalue="CA" operator="="/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="CHGC" value="CA"/>
+<function type="Elseif" lvalue="@currentvalue" rvalue="AI" operator="="/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="CHGC" value="AI"/>
+<function type="Elseif" lvalue="@currentvalue" rvalue="DI" operator="="/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="CHGC" value="D"/>
+<function type="EndIf" />
+<function type="EndIf" />
+<function type="Setvariable" name="COMMENT" value="----------------------------------CODE FOR CHGC 7075 MC LANCE------------------------------------------------------"/>
+<function type="If" lvalue="@receiver_id" rvalue="7075" operator="="/>
+<function type="OrIf" lvalue="@receiver_id" rvalue="6116" operator="="/>
+<function type="If" lvalue="@vField_117" rvalue="CT" operator="="/>
+<function type="OrIf" lvalue="@vField_117" rvalue="PC" operator="="/>
+<function type="OrIf" lvalue="@vField_117" rvalue="PQ" operator="="/>
+<function type="OrIf" lvalue="@vField_117" rvalue="QD" operator="="/>
+<function type="OrIf" lvalue="@vField_117" rvalue="QI" operator="="/>
+<function type="OrIf" lvalue="@vField_117" rvalue="CC" operator="="/>
+<function type="OrIf" lvalue="@vField_117" rvalue="NC" operator="="/>
+<function type="Setvariable" name="vPOC_code" value="CA"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="CHGC" value="CA"/>
+<function type="EndIf" />
+<function type="EndIf" />
+<function type="If" lvalue="@receiver_id" rvalue="7075" operator="="/>
+<function type="If" lvalue="@DTM067" rvalue="" operator="!="/>
+<function type="Setvalue" exd="Exchange_860" table="Header" field="DRQJ" value="@DTM067"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="DRQJ" value="@DTM067"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="CHGC" value="CA"/>
+<function type="EndIf" />
+<function type="EndIf" />
+<function type="If" lvalue="@currentvalue" rvalue="CA" operator="="/>
+<function type="Setvalue" exd="Exchange_860" table="Header" field="DRQJ" value="@DTM067"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="DRQJ" value="@DTM067"/>
+<function type="EndIf" />
+<function type="Setvariable" name="COMMENT" value="-----------------------code for CHGC with receiver set 1 at CHGC lookup file----------------"/>
+<function type="If" lvalue="@vCHGC" rvalue="1" operator="="/>
+<function type="If" lvalue="@vField_117" rvalue="CT" operator="="/>
+<function type="OrIf" lvalue="@vField_117" rvalue="PC" operator="="/>
+<function type="OrIf" lvalue="@vField_117" rvalue="PQ" operator="="/>
+<function type="OrIf" lvalue="@vField_117" rvalue="QD" operator="="/>
+<function type="OrIf" lvalue="@vField_117" rvalue="QI" operator="="/>
+<function type="OrIf" lvalue="@vField_117" rvalue="CC" operator="="/>
+<function type="OrIf" lvalue="@vField_117" rvalue="NC" operator="="/>
+<function type="OrIf" lvalue="@vField_117" rvalue="CA" operator="="/>
+<function type="OrIf" lvalue="@vField_117" rvalue="RZ" operator="="/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="CHGC" value="CA"/>
+<function type="Elseif" lvalue="@vField_117" rvalue="IA" operator="="/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="CHGC" value="AI"/>
+<function type="Elseif" lvalue="@vField_117" rvalue="DI" operator="="/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="CHGC" value="D"/>
+<function type="EndIf" />
+<function type="EndIf" />
+<function type="If" lvalue="@currentvalue" rvalue="CA" operator="="/>
+<function type="OrIf" lvalue="@currentvalue" rvalue="RZ" operator="="/>
+<function type="Setvalue" exd="Exchange_860" table="Header" field="DRQJ" value="@DTM067"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="DRQJ" value="@DTM067"/>
+<function type="EndIf" />
+</functions>
+</node>
+<node type="field" order="119" name="Quantity_Remaining_(860)">
+<separator>TAB</separator>
+<functions FunctionCount="4">
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="UORG"/>
+<function type="If" lvalue="@receiver_id" rvalue="21197" operator="="/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="UORG" value="@index90"/>
+<function type="EndIf" />
+</functions>
+</node>
+<node type="field" order="120" name="Total_Number_of_Line_Items">
+<separator>TAB</separator>
+<functions FunctionCount="3">
+<function type="SetValue" exd="Exchange_860" table="Header" field="EDDL"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="EDDL"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="EDSP" value="0"/>
+</functions>
+</node>
+<node type="field" order="121" name="Total_Order_Qty">
+<separator>TAB</separator>
+</node>
+<node type="field" order="122" name="Total_Order_Amount">
+<separator>TAB</separator>
+</node>
+<node type="field" order="123" name="Total_Weight">
+<separator>TAB</separator>
+</node>
+<node type="field" order="124" name="Total_Weight_UOM">
+<separator>TAB</separator>
+</node>
+<node type="field" order="125" name="Total_Volume">
+<separator>TAB</separator>
+</node>
+<node type="field" order="126" name="Total_Volume_UOM">
+<separator>NONE</separator>
+</node>
+</node>
+</doc>
+</xmap>

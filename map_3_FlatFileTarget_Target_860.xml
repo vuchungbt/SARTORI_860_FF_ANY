@@ -1,0 +1,2969 @@
+<xmap>
+<doc type="fftrg" name="Target_860">
+<message></message>
+<exd>../jobs/SARTORI_860_FF_ANY/exd_Exchange_860.xml#Exchange_860</exd>
+<Directory>@targetfolder</Directory>
+<EscapeCharacter>""</EscapeCharacter>
+<FileName>@output</FileName>
+<fileopenmode>w</fileopenmode>
+<TextWrapping>""</TextWrapping>
+<TruncateTrailDelimiters>No</TruncateTrailDelimiters>
+<writeidentifiers>Yes</writeidentifiers>
+<node type="function" name="PreProcessing">
+<functions FunctionCount="3">
+<function type="Operatevariable" name="output" value="@Filename" />
+<function type="SetDynamicName" variable="temp" format="_[C].ASCII" />
+<function type="Operatevariable" name="output" value="+@temp" />
+</functions>
+</node>
+
+<recordend>NEWLINE</recordend>
+<offsetbegin>0</offsetbegin>
+<node type="record" name="Header" level="1">
+<node type="field" order="1" name="EDTY">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="3">
+<function type="Nextrow" exd="Exchange_860" table="Header"/>
+<function type="GetValue" exd="Exchange_860" table="Header" field="EDTY"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="2" name="EDSQ">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EDSQ"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="3" name="EKCO">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EKCO"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="4" name="EDOC">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EDOC"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="5" name="EDCT">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EDCT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="6" name="EDLN">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EDLN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="7" name="EDST">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EDST"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="8" name="EDFT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EDFT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="9" name="EDDT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EDDT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="10" name="EDER">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EDER"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="11" name="EDDL">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EDDL"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="12" name="EDSP">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EDSP"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="13" name="EDBT">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EDBT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="14" name="PNID">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="PNID"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="15" name="TPUR">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="TPUR"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="16" name="KCOO">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="KCOO"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="17" name="DOCO">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="DOCO"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="18" name="DCTO">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="DCTO"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="19" name="SFXO">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="SFXO"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="20" name="MCU">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="MCU"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="21" name="CO">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="CO"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="22" name="OKCO">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="OKCO"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="23" name="OORN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="OORN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="24" name="OCTO">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="OCTO"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="25" name="RKCO">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="RKCO"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="26" name="RORN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="RORN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="27" name="RCTO">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="RCTO"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="28" name="AN8">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="AN8"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="29" name="SHAN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="SHAN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="30" name="PA8">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="PA8"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="31" name="DRQJ">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="Getvalue" exd="Exchange_860" table="Header" field="DRQJ"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="32" name="TRDJ">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="TRDJ"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="33" name="PDDJ">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="PDDJ"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="34" name="OPDJ">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="OPDJ"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="35" name="ADDJ">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="Getvalue" exd="Exchange_860" table="Header" field="ADDJ"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="36" name="CNDJ">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="CNDJ"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="37" name="PEFJ">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="PEFJ"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="38" name="PPDJ">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="PPDJ"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="39" name="PSDJ">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="PSDJ"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="40" name="VR01">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="VR01"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="41" name="VR02">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="VR02"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="42" name="DEL1">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="DEL1"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="43" name="DEL2">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="DEL2"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="44" name="INMG">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="INMG"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="45" name="PTC">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="PTC"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="46" name="RYIN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="RYIN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="47" name="ASN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="ASN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="48" name="PRGP">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="PRGP"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="49" name="TRDC">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="TRDC"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="50" name="PCRT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="PCRT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="51" name="TXA1">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="TXA1"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="52" name="EXR1">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EXR1"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="53" name="TXCT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="TXCT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="54" name="ATXT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="ATXT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="55" name="PRIO">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="PRIO"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="56" name="BACK">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="BACK"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="57" name="SBAL">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="SBAL"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="58" name="NTR">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="NTR"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="59" name="ANBY">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="ANBY"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="60" name="CARS">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="CARS"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="61" name="MOT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="MOT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="62" name="COT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="COT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="63" name="ROUT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="ROUT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="64" name="STOP">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="STOP"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="65" name="ZON">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="ZON"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="66" name="CNID">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="CNID"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="67" name="FRTH">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="FRTH"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="68" name="AFT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="Getvalue" exd="Exchange_860" table="Header" field="AFT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="69" name="RCD">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="RCD"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="70" name="OTOT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="OTOT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="71" name="TOTC">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="TOTC"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="72" name="WUMD">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="WUMD"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="73" name="VUMD">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="VUMD"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="74" name="AUTN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="AUTN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="75" name="CACT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="CACT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="76" name="CEXP">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="CEXP"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="77" name="CRMD">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="CRMD"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="78" name="CRRM">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="CRRM"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="79" name="CRCD">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="CRCD"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="80" name="CRR">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="CRR"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="81" name="LNGP">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="LNGP"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="82" name="FAP">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="FAP"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="83" name="FCST">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="FCST"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="84" name="ORBY">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="ORBY"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="85" name="TKBY">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="TKBY"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="86" name="URCD">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="URCD"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="87" name="URDT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="URDT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="88" name="URAT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="URAT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="89" name="URAB">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="URAB"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="90" name="URRF">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="URRF"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="91" name="TORG">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="TORG"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="92" name="USER">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="USER"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="93" name="PID">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="PID"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="94" name="JOBN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="JOBN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="95" name="UPMJ">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="UPMJ"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="96" name="TDAY">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="TDAY"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="97" name="IR01">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="IR01"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="98" name="IR02">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="IR02"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="99" name="IR03">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="IR03"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="100" name="IR04">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="IR04"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="101" name="IR05">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="IR05"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="102" name="VR03">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="VR03"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="103" name="SOOR">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="SOOR"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="104" name="PMDT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="PMDT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="105" name="RSDT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="RSDT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="106" name="RQSJ">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="RQSJ"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="107" name="PSTM">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="PSTM"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="108" name="PDTT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="PDTT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="109" name="OPTT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="OPTT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="110" name="DRQT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="DRQT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="111" name="ADTM">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="ADTM"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="112" name="ADLJ">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="Getvalue" exd="Exchange_860" table="Header" field="ADLJ"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="113" name="PBAN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="PBAN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="114" name="ITAN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="ITAN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="115" name="FTAN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="FTAN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="116" name="DVAN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="DVAN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="117" name="DOC1">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="DOC1"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="118" name="DCT4">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="DCT4"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="119" name="CORD">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="CORD"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="120" name="BSC">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="BSC"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="121" name="BCRC">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="BCRC"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="122" name="RSHT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="RSHT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="123" name="HOLD">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="HOLD"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="124" name="FUF1">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="FUF1"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="125" name="AUFT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="AUFT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="126" name="AUFI">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="AUFI"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="127" name="OPBO">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="OPBO"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="128" name="OPTC">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="OPTC"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="129" name="OPLD">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="OPLD"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="130" name="OPBK">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="OPBK"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="131" name="OPSB">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="OPSB"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="132" name="OPPS">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="OPPS"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="133" name="OPPL">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="OPPL"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="134" name="OPMS">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="OPMS"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="135" name="OPSS">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="OPSS"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="136" name="OPBA">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="OPBA"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="137" name="OPLL">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="OPLL"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="138" name="PRAN8">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="PRAN8"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="139" name="PRCIDLN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="PRCIDLN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="140" name="OPPID">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="OPPID"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="141" name="CCIDLN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="CCIDLN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="142" name="SDATTN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="SDATTN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="143" name="SHCCIDLN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="SHCCIDLN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="144" name="SPATTN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="SPATTN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="145" name="OTIND">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="OTIND"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="146" name="EXVAR0">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EXVAR0"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="147" name="EXVAR1">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EXVAR1"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="148" name="EXVAR4">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EXVAR4"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="149" name="EXVAR5">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EXVAR5"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="150" name="EXVAR6">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EXVAR6"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="151" name="EXVAR7">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EXVAR7"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="152" name="EXVAR12">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EXVAR12"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="153" name="EXVAR13">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EXVAR13"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="154" name="EXNM0">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EXNM0"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="155" name="EXNM1">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EXNM1"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="156" name="EXNM2">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EXNM2"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="157" name="EXNMP0">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EXNMP0"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="158" name="EXNMP1">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EXNMP1"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="159" name="EXNMP2">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EXNMP2"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="160" name="EXDT0">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EXDT0"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="161" name="EXDT1">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EXDT1"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="162" name="EXDT2">
+<separator>NONE</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Header" field="EXDT2"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="record" name="Detail" level="2">
+<node type="field" order="1" name="EDTY">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="3">
+<function type="Nextrow" exd="Exchange_860" table="Detail"/>
+<function type="GetValue" exd="Exchange_860" table="Detail" field="EDTY"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="2" name="EDSQ">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="EDSQ"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="3" name="EKCO">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="EKCO"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="4" name="EDOC">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="EDOC"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="5" name="EDCT">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="EDCT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="6" name="EDLN">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="EDLN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="7" name="EDST">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="EDST"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="8" name="EDFT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="EDFT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="9" name="EDDT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="EDDT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="10" name="EDER">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="EDER"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="11" name="EDDL">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="EDDL"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="12" name="EDSP">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="EDSP"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="13" name="EDBT">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="EDBT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="14" name="PNID">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="PNID"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="15" name="CHGC">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="CHGC"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="16" name="KCOO">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="KCOO"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="17" name="DOCO">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="DOCO"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="18" name="DCTO">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="DCTO"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="19" name="LNID">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="LNID"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="20" name="SFXO">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SFXO"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="21" name="MCU">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="MCU"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="22" name="CO">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="CO"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="23" name="OKCO">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="OKCO"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="24" name="OORN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="OORN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="25" name="OCTO">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="OCTO"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="26" name="OGNO">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="OGNO"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="27" name="RKCO">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="RKCO"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="28" name="RORN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="RORN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="29" name="RCTO">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="RCTO"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="30" name="RLLN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="RLLN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="31" name="DMCT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="DMCT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="32" name="DMCS">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="DMCS"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="33" name="AN8">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="AN8"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="34" name="SHAN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SHAN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="35" name="PA8">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="PA8"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="36" name="DRQJ">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="DRQJ"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="37" name="TRDJ">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="TRDJ"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="38" name="PDDJ">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="PDDJ"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="39" name="OPDJ">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="OPDJ"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="40" name="ADDJ">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="ADDJ"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="41" name="IVD">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="IVD"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="42" name="CNDJ">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="CNDJ"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="43" name="DGL">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="DGL"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="44" name="RSDJ">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="RSDJ"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="45" name="PEFJ">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="PEFJ"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="46" name="PPDJ">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="PPDJ"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="47" name="PSDJ">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="PSDJ"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="48" name="VR01">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="VR01"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="49" name="VR02">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="VR02"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="50" name="ITM">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="ITM"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="51" name="LITM">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="LITM"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="52" name="AITM">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="AITM"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="53" name="CITM">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="CITM"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="54" name="LOCN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="LOCN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="55" name="LOTN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="LOTN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="56" name="FRGD">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="FRGD"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="57" name="THGD">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="THGD"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="58" name="FRMP">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="FRMP"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="59" name="THRP">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="THRP"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="60" name="EXDP">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="EXDP"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="61" name="DSC1">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="DSC1"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="62" name="DSC2">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="DSC2"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="63" name="LNTY">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="LNTY"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="64" name="NXTR">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="NXTR"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="65" name="LTTR">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="LTTR"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="66" name="EMCU">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="EMCU"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="67" name="RLIT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="RLIT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="68" name="KTLN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="KTLN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="69" name="CPNT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="CPNT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="70" name="RKIT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="RKIT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="71" name="KTP">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="KTP"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="72" name="SRP1">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SRP1"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="73" name="SRP2">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SRP2"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="74" name="SRP3">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SRP3"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="75" name="SRP4">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SRP4"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="76" name="SRP5">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SRP5"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="77" name="PRP1">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="PRP1"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="78" name="PRP2">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="PRP2"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="79" name="PRP3">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="PRP3"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="80" name="PRP4">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="PRP4"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="81" name="PRP5">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="PRP5"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="82" name="UOM">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="UOM"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="83" name="UORG">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="UORG"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="84" name="SOQS">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SOQS"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="85" name="SOBK">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SOBK"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="86" name="SOCN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SOCN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="87" name="SONE">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SONE"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="88" name="UOPN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="UOPN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="89" name="QTYT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="QTYT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="90" name="QRLV">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="QRLV"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="91" name="COMM">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="COMM"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="92" name="OTQY">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="OTQY"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="93" name="UPRC">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="UPRC"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="94" name="AEXP">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="AEXP"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="95" name="AOPN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="AOPN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="96" name="PROV">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="PROV"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="97" name="TPC">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="TPC"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="98" name="APUM">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="APUM"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="99" name="LPRC">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="LPRC"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="100" name="UNCS">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="UNCS"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="101" name="ECST">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="ECST"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="102" name="CSTO">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="CSTO"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="103" name="TCST">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="TCST"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="104" name="INMG">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="INMG"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="105" name="PTC">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="PTC"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="106" name="RYIN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="RYIN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="107" name="DTBS">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="DTBS"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="108" name="TRDC">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="TRDC"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="109" name="FUN2">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="FUN2"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="110" name="ASN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="ASN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="111" name="PRGR">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="PRGR"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="112" name="CLVL">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="CLVL"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="113" name="DSPR">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="DSPR"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="114" name="DSFT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="DSFT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="115" name="FAPP">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="FAPP"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="116" name="CADC">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="CADC"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="117" name="KCO">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="KCO"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="118" name="DOC">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="DOC"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="119" name="DCT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="DCT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="120" name="ODOC">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="ODOC"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="121" name="ODCT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="ODCT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="122" name="OKC">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="OKC"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="123" name="PSN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="PSN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="124" name="DELN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="DELN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="125" name="TAX1">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="TAX1"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="126" name="TXA1">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="TXA1"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="127" name="EXR1">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="EXR1"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="128" name="ATXT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="ATXT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="129" name="PRIO">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="PRIO"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="130" name="RESL">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="RESL"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="131" name="BACK">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="BACK"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="132" name="SBAL">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SBAL"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="133" name="APTS">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="APTS"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="134" name="LOB">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="LOB"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="135" name="EUSE">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="EUSE"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="136" name="DTYS">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="DTYS"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="137" name="NTR">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="NTR"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="138" name="VEND">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="VEND"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="139" name="ANBY">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="ANBY"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="140" name="CARS">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="CARS"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="141" name="MOT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="MOT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="142" name="COT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="COT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="143" name="ROUT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="ROUT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="144" name="STOP">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="STOP"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="145" name="ZON">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="ZON"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="146" name="CNID">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="CNID"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="147" name="FRTH">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="FRTH"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="148" name="AFT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="Getvalue" exd="Exchange_860" table="Detail" field="AFT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="149" name="FUF1">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="FUF1"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="150" name="FRTC">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="FRTC"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="151" name="FRAT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="FRAT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="152" name="RATT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="RATT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="153" name="SHCM">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SHCM"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="154" name="SHCN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SHCN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="155" name="SERN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SERN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="156" name="UOM1">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="UOM1"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="157" name="PQOR">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="PQOR"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="158" name="UOM2">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="UOM2"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="159" name="SQOR">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SQOR"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="160" name="UOM4">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="UOM4"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="161" name="ITWT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="ITWT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="162" name="WTUM">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="WTUM"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="163" name="ITVL">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="ITVL"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="164" name="VLUM">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="VLUM"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="165" name="RPRC">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="RPRC"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="166" name="ORPR">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="ORPR"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="167" name="ORP">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="ORP"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="168" name="CMGP">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="CMGP"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="169" name="CMGL">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="CMGL"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="170" name="GLC">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="GLC"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="171" name="CTRY">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="CTRY"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="172" name="FY">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="FY"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="173" name="STTS">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="STTS"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="174" name="SO01">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SO01"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="175" name="SO02">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SO02"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="176" name="SO03">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SO03"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="177" name="SO04">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SO04"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="178" name="SO05">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SO05"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="179" name="SO06">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SO06"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="180" name="SO07">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SO07"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="181" name="SO08">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SO08"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="182" name="SO09">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SO09"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="183" name="SO10">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SO10"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="184" name="SO11">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SO11"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="185" name="SO12">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="Getvalue" exd="Exchange_860" table="Detail" field="SO12"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="186" name="SO13">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SO13"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="187" name="SO14">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SO14"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="188" name="SO15">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SO15"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="189" name="ACOM">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="ACOM"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="190" name="CMCG">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="CMCG"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="191" name="RCD">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="RCD"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="192" name="GRWT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="GRWT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="193" name="GWUM">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="GWUM"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="194" name="ANI">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="ANI"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="195" name="AID">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="AID"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="196" name="OMCU">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="OMCU"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="197" name="OBJ">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="OBJ"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="198" name="SUB">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SUB"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="199" name="LT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="LT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="200" name="SBL">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SBL"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="201" name="SBLT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SBLT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="202" name="LCOD">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="LCOD"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="203" name="UPC1">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="UPC1"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="204" name="UPC2">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="UPC2"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="205" name="UPC3">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="UPC3"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="206" name="SWMS">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SWMS"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="207" name="UNCD">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="UNCD"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="208" name="CRMD">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="CRMD"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="209" name="CRCD">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="CRCD"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="210" name="CRR">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="CRR"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="211" name="FPRC">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="FPRC"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="212" name="FUP">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="FUP"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="213" name="FEA">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="FEA"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="214" name="FUC">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="FUC"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="215" name="FEC">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="FEC"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="216" name="URCD">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="URCD"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="217" name="URDT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="URDT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="218" name="URAT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="URAT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="219" name="URAB">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="URAB"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="220" name="URRF">
+<datatype>Text</datatype>
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="URRF"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="221" name="TORG">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="TORG"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="222" name="USER">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="USER"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="223" name="PID">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="PID"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="224" name="JOBN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="JOBN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="225" name="UPMJ">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="UPMJ"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="226" name="TDAY">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="TDAY"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="227" name="IR01">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="IR01"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="228" name="IR02">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="IR02"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="229" name="IR03">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="IR03"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="230" name="IR04">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="IR04"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="231" name="IR05">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="IR05"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="232" name="SOOR">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SOOR"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="233" name="DEID">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="DEID"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="234" name="PSIG">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="PSIG"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="235" name="RLNU">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="RLNU"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="236" name="PMDT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="PMDT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="237" name="RLTM">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="RLTM"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="238" name="RLDJ">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="RLDJ"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="239" name="DRQT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="DRQT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="240" name="ADTM">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="ADTM"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="241" name="OPTT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="OPTT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="242" name="PDTT">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="PDTT"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="243" name="PSTM">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="PSTM"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="244" name="PMTN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="PMTN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="245" name="BSC">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="BSC"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="246" name="CBSC">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="CBSC"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="247" name="DVAN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="DVAN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="248" name="RFRV">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="RFRV"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="249" name="SHPN">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="SHPN"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="250" name="PRJM">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="PRJM"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="251" name="HOLD">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="HOLD"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="252" name="PMTO">
+<separator>,</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="PMTO"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+<node type="field" order="253" name="DUAL">
+<separator>NONE</separator>
+<functions FunctionCount="2">
+<function type="GetValue" exd="Exchange_860" table="Detail" field="DUAL"/>
+<function type="Defaultvalue" value=" "/>
+</functions>
+</node>
+</node>
+</node>
+</doc>
+</xmap>

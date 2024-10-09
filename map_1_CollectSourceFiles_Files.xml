@@ -1,0 +1,10 @@
+<xmap>
+<doc type="collectsrcfiles" name="Files">
+<Category>ANY</Category>
+<FileBatch>999</FileBatch>
+<Filepattern>@Input</Filepattern>
+<SourceDirectory>@Address_Input</SourceDirectory>
+<TargetDirectory>@Address_Input</TargetDirectory>
+<WorkingDirectory>@Address_Input</WorkingDirectory>
+</doc>
+</xmap>

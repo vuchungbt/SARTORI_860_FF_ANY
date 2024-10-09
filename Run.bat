@@ -1,0 +1,2 @@
+cd C:\DiCentral\DiUnite\bin64_ansi
+jobrun -m:..\jobs\SARTORI_860_FF_ANY\job_SARTORI_860_FF_ANY.xml#SARTORI_860_FF_ANY -v:Input="Input.ascii" -v:Address_Input="C:\DiCentral\DiUnite\jobs\SARTORI_860_FF_ANY" -v:targetfolder="C:\DiCentral\DiUnite\jobs\SARTORI_860_FF_ANY" -v:Filename="Output.xml"

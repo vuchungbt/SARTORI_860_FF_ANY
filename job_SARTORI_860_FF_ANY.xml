@@ -1,0 +1,16 @@
+<xmap>
+<doc type="job" name="SARTORI_860_FF_ANY">
+<node type="task" name="Files">
+<component>COLLECTSRCFILES.dll</component>
+<metainfo>../jobs/SARTORI_860_FF_ANY/map_1_CollectSourceFiles_Files.xml#Files</metainfo>
+</node>
+<node type="task" name="Source_ex860">
+<component>FFSRC.dll</component>
+<metainfo>../jobs/SARTORI_860_FF_ANY/map_2_FlatFileSource_Source_ex860.xml#Source_ex860</metainfo>
+</node>
+<node type="task" name="Target_860">
+<component>FFTRG.dll</component>
+<metainfo>../jobs/SARTORI_860_FF_ANY/map_3_FlatFileTarget_Target_860.xml#Target_860</metainfo>
+</node>
+</doc>
+</xmap>
