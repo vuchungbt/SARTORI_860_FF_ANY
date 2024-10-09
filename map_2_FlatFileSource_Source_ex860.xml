@@ -142,7 +142,7 @@
 </node>
 <node type="field" order="8" name="Vendor_Code">
 <separator>TAB</separator>
-<functions FunctionCount="70">
+<functions FunctionCount="67">
 <function type="Setvariable" name="vField_7"/>
 <function type="Setvariable" name="GSST" value="@vField_7"/>
 <function type="Setvariable" name="GS" value="@vField_7"/>
@@ -170,9 +170,6 @@
 <function type="Elseif" lvalue="@receiver_id" rvalue="16688" operator="="/>
 <function type="Setvariable" name="GS" value="42"/>
 <function type="Setvariable" name="GSST" value="42"/>
-<function type="Elseif" lvalue="@receiver_id" rvalue="51990" operator="="/>
-<function type="Setvariable" name="GS" value="43"/>
-<function type="Setvariable" name="GSST" value="43"/>
 <function type="EndIf" />
 <function type="Setvariable" name="sql" value="select top(1) gr_cntl_no from [dbo].[inbox_Qr"/>
 <function type="Operatevariable" name="@sql" value="+@Quarter"/>
@@ -528,8 +525,12 @@
 </node>
 <node type="field" order="100" name="Vendor_Item_No">
 <separator>TAB</separator>
-<functions FunctionCount="4">
+<functions FunctionCount="8">
 <function type="If" lvalue="@receiver_id" rvalue="25214" operator="="/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="VR02"/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="CITM"/>
+<function type="EndIf" />
+<function type="If" lvalue="@receiver_id" rvalue="54388" operator="="/>
 <function type="Setvalue" exd="Exchange_860" table="Detail" field="VR02"/>
 <function type="Setvalue" exd="Exchange_860" table="Detail" field="CITM"/>
 <function type="EndIf" />
@@ -665,9 +666,12 @@
 </node>
 <node type="field" order="119" name="Quantity_Remaining_(860)">
 <separator>TAB</separator>
-<functions FunctionCount="4">
+<functions FunctionCount="7">
 <function type="Setvalue" exd="Exchange_860" table="Detail" field="UORG"/>
 <function type="If" lvalue="@receiver_id" rvalue="21197" operator="="/>
+<function type="Setvalue" exd="Exchange_860" table="Detail" field="UORG" value="@index90"/>
+<function type="EndIf" />
+<function type="If" lvalue="@receiver_id" rvalue="54388" operator="="/>
 <function type="Setvalue" exd="Exchange_860" table="Detail" field="UORG" value="@index90"/>
 <function type="EndIf" />
 </functions>
