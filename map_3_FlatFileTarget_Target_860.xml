@@ -16,7 +16,6 @@
 <function type="Operatevariable" name="output" value="+@temp" />
 </functions>
 </node>
-
 <recordend>NEWLINE</recordend>
 <offsetbegin>0</offsetbegin>
 <node type="record" name="Header" level="1">

@@ -5,6 +5,5 @@
 <Filepattern>@Input</Filepattern>
 <SourceDirectory>@Address_Input</SourceDirectory>
 <TargetDirectory>@Address_Input</TargetDirectory>
-<WorkingDirectory>@Address_Input</WorkingDirectory>
-</doc>
+<WorkingDirectory>@Address_Input</WorkingDirectory></doc>
 </xmap>

@@ -16,7 +16,6 @@
 <function type="Setvariable" name="countline" value="0" datatype="Integer" />
 </functions>
 </node>
-
 <recordend>NEWLINE</recordend>
 <offsetbegin>0</offsetbegin>
 <node type="record" name="ff" level="1">
@@ -142,7 +141,7 @@
 </node>
 <node type="field" order="8" name="Vendor_Code">
 <separator>TAB</separator>
-<functions FunctionCount="70">
+<functions FunctionCount="67">
 <function type="Setvariable" name="vField_7"/>
 <function type="Setvariable" name="GSST" value="@vField_7"/>
 <function type="Setvariable" name="GS" value="@vField_7"/>
@@ -170,9 +169,6 @@
 <function type="Elseif" lvalue="@receiver_id" rvalue="16688" operator="="/>
 <function type="Setvariable" name="GS" value="42"/>
 <function type="Setvariable" name="GSST" value="42"/>
-<function type="Elseif" lvalue="@receiver_id" rvalue="51990" operator="="/>
-<function type="Setvariable" name="GS" value="43"/>
-<function type="Setvariable" name="GSST" value="43"/>
 <function type="EndIf" />
 <function type="Setvariable" name="sql" value="select top(1) gr_cntl_no from [dbo].[inbox_Qr"/>
 <function type="Operatevariable" name="@sql" value="+@Quarter"/>
